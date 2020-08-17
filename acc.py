@@ -19,8 +19,3 @@ class Checking(Account):
 
     def __init__(self,filepath):
         Account.__init__(self, filepath)
-
-checking=Checking("balance.txt")
-checking.deposit(200)
-print(checking.balance)
-checking.commit()
