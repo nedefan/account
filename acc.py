@@ -1,4 +1,5 @@
 class Account:
+
     def __init__(self, filepath):
         self.filepath=filepath
         with open(filepath, 'r') as file:
@@ -12,7 +13,7 @@ class Account:
 
     def commit(self):
         with open(self.filepath, 'w') as file:
-            file.write(self.balance)
+            file.write(str(self.balance))
 
 account=Account("balance.txt")
 print(account.balance)
