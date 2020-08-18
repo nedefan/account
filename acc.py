@@ -17,5 +17,14 @@ class Account:
 
 class Checking(Account):
 
-    def __init__(self,filepath):
+    def __init__(self, filepath, fee):
         Account.__init__(self, filepath)
+        self.fee = fee
+
+    def transfer(self, amount):
+        self.balance=self.balance-amount - self.fee
+
+checking = Checking("balance.txt", 1)
+checking.transfer(10)
+print(checking.balance)
+checking.commit()
